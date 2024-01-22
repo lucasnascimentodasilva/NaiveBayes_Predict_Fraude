@@ -11,7 +11,7 @@ from sklearn.naive_bayes import GaussianNB
 
 
 #################### NAIVE BAYES ######################
-base_risco_fraude = pd.read_csv(r'C:\Users\lunascim\Documents\CURSO PYTHON A - Z\Naive_Bayes_Predict_Fraud\risco_fraude.csv')
+base_risco_fraude = pd.read_csv(r'.\risco_fraude.csv')
 #atributos previsores
 x_risco_fraude = base_risco_fraude.iloc[:,0:4].values
 
