@@ -35,15 +35,19 @@ x_risco_fraude[:,3] = label_encoder_limite.fit_transform(x_risco_fraude[:,3])
 print(x_risco_fraude)
 
 #salvando atributos transformados para utilizacoes futuras
-with open('risco_credito.pkl', 'wb') as f:
+with open('risco_fraude.pkl', 'wb') as f:
     pickle.dump([x_risco_fraude, y_risco_fraude], f)
 
-naive_risco_credito = GaussianNB()
-naive_risco_credito.fit(x_risco_fraude, y_risco_fraude)
+naive_risco_fraude = GaussianNB()
+naive_risco_fraude.fit(x_risco_fraude, y_risco_fraude)
 
 #submetendo novos dados
-previsao = naive_risco_credito.predict([[2,0,2,2],[1,1,0,0],[0,0,1,1]])
+previsao = naive_risco_fraude.predict([[2,0,2,2],[1,1,0,0],[0,0,1,1],[1,1,1,1]])
+
 
 #previsao
 print("Previsão com base nos dados inputados: ") 
+
 print(previsao)
+
+
